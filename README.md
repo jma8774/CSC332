@@ -1,4 +1,3 @@
-# CSC332
-(3/ 2020) Operating Systems CCNY
+## (3/ 2020) CSC 322 Operating Systems
 
-Collection of all assignments from CSC 322 at CCNY
+Collection of all assignments from CSC 322 at City College
