@@ -10,8 +10,8 @@ int main() {
         printf("Fork failed\n");
         return 1;
     } else if(pid == 0) {
-        printf("This is child 1 which is about to execute command...\n");
-        execl("/bin/date", "date", NULL);
+        char *argv[3] = {"ls", "-l", NULL};
+        execvp("ls", argv);
     } else {
         printf("Parent waiting...\n");
         printf("PID of this child is %d\n", pid);
