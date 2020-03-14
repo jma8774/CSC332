@@ -24,8 +24,9 @@ int main(int argc, char *argv[]) {
         printf("[Log] No such file\n"); 
         return 0; 
     }
+    close(file);
+    
     int grades[students][chapters * homework];
-
     for(int i = 0; i < students; i ++) {
         for(int j = 0; j < chapters*homework; j ++) {
             fscanf(file, "%d", &grades[i][j]);
