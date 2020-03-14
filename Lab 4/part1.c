@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
     printf("Please enter the command > ");
     getline(&n, &bufsize, stdin);
 
-	while(strcmp(n, "quit") !=0) {
+	while(n[0] != 'q' || n[1] != 'u' || n[2] != 'i' || n[3] != 't' || strlen(n) != 5 ) {
         int i = 0;
         char* token = strtok(n, " \t\r\n\a");   // splitting the string by space and etc.
         while (token != NULL) {     // keep splitting and taking arguments until no more
@@ -31,13 +31,13 @@ int main(int argc, char *argv[]) {
             printf("Argument[%d]: %s\n", j, args[j]);
         }
   
-	    child = fork();
+		child = fork();
         if(child < 0) {
-            printf("Debug: Fork failed\n");
+            printf("Log: Fork failed\n");
         } else if(child == 0) {
             printf("\nChild executing command:\n");
 			execvp(args[0], args);
-            printf("Debug: Exec failed, exit(0)\n");
+            printf("Log: Exec failed, exit(0)\n");
             exit(0);
 		} else {
             wait(NULL);
@@ -47,6 +47,7 @@ int main(int argc, char *argv[]) {
             getline(&n, &bufsize, stdin);
         }
 	}
-
+    printf("Program dead\n");
+    free(n);
 	return 0;
 }
