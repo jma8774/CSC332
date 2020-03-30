@@ -1,6 +1,6 @@
-# CSC 322 Operating Systems
+# CSC 32200 Operating Systems
 
-Collection of all assignments from CSC 322 at City College with professor Zaid Al-Mashhadnai.
+Collection of all assignments from CSC 322-- at City College with professor Zaid Al-Mashhadnai.
 
 Note that these files are meant to be ran on a Linux machine!
 
